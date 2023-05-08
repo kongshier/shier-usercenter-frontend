@@ -4,7 +4,7 @@ import { Alert, Card, Typography } from 'antd';
 import React from 'react';
 const Admin: React.FC = () => {
   return (
-    <PageHeaderWrapper content={' 这个页面只有 admin 权限才能查看'}>
+    <PageHeaderWrapper content={' 这个页面只有 管理员 权限才能查看'}>
       <Card>
         <Alert
           message={'更快更强的重型组件，已经发布。'}
@@ -35,7 +35,6 @@ const Admin: React.FC = () => {
         <a href="https://pro.ant.design/docs/block-cn" target="_blank" rel="noopener noreferrer">
           use block
         </a>
-        。
       </p>
     </PageHeaderWrapper>
   );

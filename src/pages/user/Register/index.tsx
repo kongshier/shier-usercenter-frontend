@@ -26,6 +26,7 @@ const Register: React.FC = () => {
         /** 此方法会跳转到 redirect 参数所在的位置 */
         if (!history) return;
         const { query } = history.location;
+
         history.push({
           pathname: '/user/login',
           query,
