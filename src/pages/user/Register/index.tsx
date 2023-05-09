@@ -20,22 +20,19 @@ const Register: React.FC = () => {
     try {
       // 注册
       const id = await register(values);
-      if (id > 0) {
+      if (id) {
         const defaultLoginSuccessMessage = '注册成功！';
         message.success(defaultLoginSuccessMessage);
         /** 此方法会跳转到 redirect 参数所在的位置 */
         if (!history) return;
         const { query } = history.location;
-
         history.push({
           pathname: '/user/login',
           query,
         });
         return;
-      } else {
-        throw new Error(`register error id =${id}`);
       }
-    } catch (error) {
+    } catch (error: any) {
       const defaultLoginFailureMessage = '注册失败，请重试！';
       message.error(defaultLoginFailureMessage);
     }
@@ -117,6 +114,25 @@ const Register: React.FC = () => {
                     min: 8,
                     type: 'string',
                     message: '密码不能小于8位！',
+                  },
+                ]}
+              />
+              <ProFormText
+                name="userCode"
+                fieldProps={{
+                  size: 'large',
+                  prefix: <LockOutlined className={styles.prefixIcon} />,
+                }}
+                placeholder="请输入属于你的编号"
+                rules={[
+                  {
+                    required: true,
+                    message: '编号必填!',
+                  },
+                  {
+                    max: 15,
+                    type: 'string',
+                    message: '编号不能大于15位',
                   },
                 ]}
               />

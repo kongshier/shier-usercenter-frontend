@@ -20,7 +20,7 @@ const loginOut = async () => {
   await outLogin();
   const { query = {}, search, pathname } = history.location;
   const { redirect } = query;
-  // Note: There may be security issues, please note
+  // 重定向到登录界面
   if (window.location.pathname !== '/user/login' && !redirect) {
     history.replace({
       pathname: '/user/login',
@@ -34,6 +34,7 @@ const loginOut = async () => {
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const { initialState, setInitialState } = useModel('@@initialState');
 
+  // 推出登录
   const onMenuClick = useCallback(
     (event: MenuInfo) => {
       const { key } = event;

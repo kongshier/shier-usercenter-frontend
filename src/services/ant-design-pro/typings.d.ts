@@ -2,6 +2,7 @@
 /* eslint-disable */
 
 declare namespace API {
+  // 获取用户信息
   type CurrentUser = {
     id: number;
     username: string;
@@ -16,6 +17,17 @@ declare namespace API {
     userCode: number;
   };
 
+  /**
+   * 统一返回类型
+   */
+  type BaseResponse<T> = {
+    code: number;
+    data: T;
+    message: string;
+    description: string;
+  };
+
+  // 登录结果
   type LoginResult = {
     status?: string;
     type?: string;
@@ -56,6 +68,7 @@ declare namespace API {
     status?: string;
   };
 
+  // 登录的参数
   type LoginParams = {
     userAccount?: string;
     userPassword?: string;
@@ -63,10 +76,12 @@ declare namespace API {
     type?: string;
   };
 
+  // 注册的参数
   type RegisterParams = {
     userAccount?: string;
     userPassword?: string;
     checkPassword?: string;
+    userCode?: string;
     type?: string;
   };
 
