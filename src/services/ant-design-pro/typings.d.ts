@@ -8,12 +8,12 @@ declare namespace API {
     username: string;
     userAccount: string;
     avatarUrl?: string;
-    gender: number;
+    gender: string;
     phone: string;
     email: string;
     userStatus: number;
     createTime: Date;
-    userRole: number;
+    userRole: string;
     userCode: number;
   };
 
