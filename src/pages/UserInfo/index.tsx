@@ -40,7 +40,8 @@ const UserInfo: React.FC = () => {
   console.log('currentUser:', myUser);
   return (
     <>
-      <Descriptions title="用户头像" column={2}>
+      <Divider>用户头像</Divider>
+      <Descriptions style={{ margin: '20px', marginLeft: '700px' }}>
         <Descriptions.Item>
           <Image
             src={myUser.avatarUrl === null ? DEFAULT_AVATAR_URL : myUser.avatarUrl}
@@ -82,7 +83,11 @@ const UserInfo: React.FC = () => {
 
       <ModalForm<API.CurrentUser>
         title="修改本用户信息"
-        trigger={<Button type="primary">修改信息</Button>}
+        trigger={
+          <Button type="primary" shape="round" style={{ marginTop: '100px', marginLeft: '700px' }}>
+            修改信息
+          </Button>
+        }
         autoFocusFirstInput
         modalProps={{
           destroyOnClose: true,
@@ -152,7 +157,7 @@ const UserInfo: React.FC = () => {
       <ModalForm<API.ModifyPasswordParam>
         title="修改密码"
         trigger={
-          <Button type="dashed" danger>
+          <Button danger shape="round" style={{ margin: '50px' }}>
             修改密码
           </Button>
         }

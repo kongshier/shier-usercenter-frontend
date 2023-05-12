@@ -130,7 +130,7 @@ const Login: React.FC = () => {
               marginBottom: 24,
             }}
           >
-            <Space split={<Divider type="vertical" />} align="center" size="middle">
+            <Space split={<Divider type="vertical" />} size="middle">
               <ProFormCheckbox name="autoLogin">记住密码</ProFormCheckbox>
               <a
                 style={{

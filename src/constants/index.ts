@@ -72,4 +72,9 @@ export const selectAvatarUrl = [
       'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d210d1b4c3434e72b2e9711dedcb6cfa~tplv-k3u1fbpfcp-zoom-crop-mark:1512:1512:1512:851.awebp?',
     label: '小姐姐6号',
   },
+  {
+    value:
+      'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5371651be7c74109a685d3d801f73f52~tplv-k3u1fbpfcp-zoom-crop-mark:1512:1512:1512:851.awebp?',
+    label: '小姐姐7号',
+  },
 ];
