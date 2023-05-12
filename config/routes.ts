@@ -29,10 +29,16 @@ export default [
         icon: 'smile',
         component: './Admin/UserManage',
       },
+      {
+        path: '/admin/add-user',
+        name: '新增用户',
+        icon: 'smile',
+        component: './Admin/AddUser',
+      },
       { component: './404' },
     ],
   },
-  { name: '查询表格', icon: 'table', path: '/list', component: './TableList' },
+  { name: '用户信息', icon: 'smile', path: '/user-info', component: './UserInfo' },
   { path: '/', redirect: '/welcome' },
   { component: './404' },
 ];

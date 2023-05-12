@@ -21,9 +21,10 @@ const LoginMessage: React.FC<{
   />
 );
 const Login: React.FC = () => {
-  const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
+  const [userLoginState] = useState<API.LoginResult>({});
   const [type, setType] = useState<string>('account');
   const { initialState, setInitialState } = useModel('@@initialState');
+
   const fetchUserInfo = async () => {
     const userInfo = await initialState?.fetchUserInfo?.();
     if (userInfo) {
@@ -54,8 +55,6 @@ const Login: React.FC = () => {
         history.push(redirect || '/');
         return;
       }
-      // 如果失败去设置用户错误信息
-      setUserLoginState(user);
     } catch (error) {
       const defaultLoginFailureMessage = '登录失败，请重试！';
       message.error(defaultLoginFailureMessage);
@@ -132,9 +131,7 @@ const Login: React.FC = () => {
             }}
           >
             <Space split={<Divider type="vertical" />} align="center" size="middle">
-              <ProFormCheckbox noStyle name="autoLogin">
-                自动登录
-              </ProFormCheckbox>
+              <ProFormCheckbox name="autoLogin">记住密码</ProFormCheckbox>
               <a
                 style={{
                   float: 'right',

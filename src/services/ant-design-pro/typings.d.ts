@@ -14,7 +14,44 @@ declare namespace API {
     userStatus: number;
     createTime: Date;
     userRole: string;
-    userCode: number;
+    userCode: string;
+  };
+
+  /**
+   * 修改密码的信息模板
+   */
+  type ModifyPasswordParam = {
+    userPassword: string;
+    newPassword: string;
+  };
+  /**
+   * 删除的参数
+   */
+  type DeleteParam = {
+    id: number;
+  };
+  /**
+   * 重置密码参数
+   */
+  type ResetPasswordParam = {
+    id: number;
+  };
+
+  /**
+   * 创建用户变量
+   */
+  type CreateParams = {
+    username?: string;
+    userAccount: string;
+    userPassword?: string;
+    avatarUrl?: string;
+    gender: string;
+    phone: string;
+    email: string;
+    userStatus: number;
+    createTime: Date;
+    userRole: string;
+    userCode: string;
   };
 
   /**

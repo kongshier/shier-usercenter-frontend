@@ -60,6 +60,61 @@ export async function searchUsers(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
+/** 注册接口 POST /api/user/create */
+export async function create(body: API.CreateParams, options?: { [key: string]: any }) {
+  return request<API.BaseResponse<Boolean>>('/api/user/add', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 修改用户 Post /api/user/update/my */
+export async function userModify(body: API.CurrentUser, options?: { [key: string]: any }) {
+  console.log(body);
+  return request<API.BaseResponse<boolean>>('/api/user/update/my', {
+    method: 'POST',
+    data: body,
+    ...options,
+  });
+}
+
+/** 修改用户 Post /api/user/update/my */
+export async function updateUserInfoByAdmin(
+  body: API.CurrentUser,
+  options?: { [key: string]: any },
+) {
+  console.log(body);
+  return request<API.BaseResponse<boolean>>('/api/user/update', {
+    method: 'POST',
+    data: body,
+    ...options,
+  });
+}
+
+/** 删除用户 POST /api/user/delete */
+export async function deleteUser(body: API.DeleteParam, options?: { [key: string]: any }) {
+  return request<API.BaseResponse<boolean>>('/api/user/delete', {
+    method: 'POST',
+    data: body,
+    ...options,
+  });
+}
+
+/** 修改密码 Post /api/user/modifyPassword */
+export async function modifyPassword(
+  body: API.ModifyPasswordParam,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponse<boolean>>('/api/user/update/password', {
+    method: 'POST',
+    data: body,
+    ...options,
+  });
+}
 
 /** 获取规则列表 GET /api/rule */
 export async function rule(
