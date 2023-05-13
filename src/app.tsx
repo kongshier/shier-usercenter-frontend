@@ -13,6 +13,10 @@ const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 /**
  * 白名单，不需要登录态的界面
+ *
+ *
+ *
+ *
  */
 const NO_NEED_LOGIN_WHITE_LIST = ['/user/register', loginPath];
 

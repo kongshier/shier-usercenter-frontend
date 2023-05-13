@@ -16,7 +16,7 @@ import { stringify } from 'querystring';
 const request = extend({
   credentials: 'include', // 默认请求是否带上cookie
   prefix:
-    process.env.NODE_ENV === 'production' ? 'http://user.kongshier.top' : 'http://localhost:8081',
+    process.env.NODE_ENV === 'production' ? 'http://user.kongshier.top' : 'http://localhost:8101',
   // requestType: 'form',
 });
 
