@@ -51,8 +51,8 @@ declare namespace API {
   /**
    * 上传头像
    */
-  type uploadImages = {
-    file: string;
+  type FileUpload = {
+    file?: string;
   };
 
   /**
