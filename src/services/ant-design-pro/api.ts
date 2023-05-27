@@ -1,6 +1,7 @@
 // @ts-ignore
 /* eslint-disable */
 import request from '@/plugins/globalRequest';
+import { API } from '@/services/ant-design-pro/typings';
 
 /**
  * 对应后端的接口
@@ -53,7 +54,7 @@ export async function searchUsers(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
-/** 注册接口 POST /api/user/create */
+/** 新增用户接口 POST /api/user/create */
 export async function create(body: API.CreateParams, options?: { [key: string]: any }) {
   return request<API.BaseResponse<Boolean>>('/api/user/add', {
     method: 'POST',

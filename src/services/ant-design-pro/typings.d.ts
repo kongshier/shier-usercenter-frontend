@@ -1,6 +1,8 @@
 // @ts-ignore
 /* eslint-disable */
 
+import { UploadFile } from 'antd/es/upload/interface';
+
 declare namespace API {
   // 获取用户信息
   type CurrentUser = {

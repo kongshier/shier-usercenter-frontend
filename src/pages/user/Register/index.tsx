@@ -7,16 +7,18 @@ import React, { useState } from 'react';
 import { history } from 'umi';
 import styles from './index.less';
 import { PLANET_LINK, SYSTEM_LOGO } from '@/constants';
+import type { API } from '@/services/ant-design-pro/typings';
 
 const Register: React.FC = () => {
   const [type, setType] = useState<string>('account');
+
+  // 提交注册按钮
   const handleSubmit = async (values: API.RegisterParams) => {
     const { userPassword, checkPassword } = values;
     if (userPassword !== checkPassword) {
       message.error('两次输入的密码不一致');
       return;
     }
-
     try {
       // 注册
       const id = await register(values);
@@ -76,6 +78,11 @@ const Register: React.FC = () => {
                   {
                     required: true,
                     message: '账号是必填项！',
+                  },
+                  {
+                    min: 4,
+                    type: 'string',
+                    message: '账号不能小于4位！',
                   },
                 ]}
               />

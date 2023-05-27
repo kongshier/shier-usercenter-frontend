@@ -4,7 +4,9 @@ import { ModalForm, ProForm, ProFormText } from '@ant-design/pro-components';
 import { Image, Button, message } from 'antd';
 import { request } from 'umi';
 import { modifyPassword, userModify } from '@/services/ant-design-pro/api';
-import { DEFAULT_AVATAR_URL } from '@/constants';
+import { DEFAULT_AVATAR_URL, selectAvatarUrl } from '@/constants';
+import type { API } from '@/services/ant-design-pro/typings';
+import { ProFormSelect } from '@ant-design/pro-form';
 
 const waitTime = (time: number = 100) => {
   return new Promise((resolve) => {
@@ -125,13 +127,6 @@ const UserInfo: React.FC = () => {
           />
           <ProFormText
             width="md"
-            name="avatarUrl"
-            label="头像URL"
-            placeholder="请输入头像URL"
-            initialValue={myUser.avatarUrl}
-          />
-          <ProFormText
-            width="md"
             name="gender"
             label="性别"
             placeholder="请输入性别"
@@ -150,6 +145,22 @@ const UserInfo: React.FC = () => {
             label="邮箱"
             placeholder="请输入邮箱"
             initialValue={myUser.email}
+          />
+          <ProFormSelect
+            name="avatarUrl"
+            fieldProps={{
+              size: 'large',
+            }}
+            label="用户头像"
+            options={selectAvatarUrl}
+            placeholder={'请选择用户头像 '}
+            initialValue={myUser.avatarUrl}
+            rules={[
+              {
+                required: true,
+                message: '请输入选择用户头像!',
+              },
+            ]}
           />
         </ProForm.Group>
       </ModalForm>

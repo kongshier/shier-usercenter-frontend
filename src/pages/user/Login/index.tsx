@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { history, Link, useModel } from 'umi';
 import styles from './index.less';
 import { CSDN_LINK, PLANET_LINK, SYSTEM_LOGO } from '@/constants';
+import type { API } from '@/services/ant-design-pro/typings';
 
 const LoginMessage: React.FC<{
   content: string;

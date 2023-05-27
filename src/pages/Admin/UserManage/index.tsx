@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { deleteUser, searchUsers, updateUserInfoByAdmin } from '@/services/ant-design-pro/api';
 import { ProFormSelect } from '@ant-design/pro-form';
 import { selectAvatarUrl, selectGender, selectUserRole, selectUserStatus } from '@/constants';
+import type { API } from '@/services/ant-design-pro/typings';
 
 export const waitTimePromise = async (time: number = 100) => {
   return new Promise((resolve) => {
@@ -164,12 +165,11 @@ const columns: ProColumns<API.CurrentUser>[] = [
             placeholder="请输入编号"
             initialValue={record.userCode}
           />
-
           <ProFormText
             width="md"
             name="gender"
             label="性别"
-            placeholder="请输入性别，1为男，0为女"
+            placeholder="请输入性别"
             initialValue={record.gender}
           />
           <ProFormText
